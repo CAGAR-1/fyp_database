@@ -1,5 +1,4 @@
 <?php
-
 include 'DatabaseConfig.php';
 include 'helper_functions/authentication_functions.php';
 
