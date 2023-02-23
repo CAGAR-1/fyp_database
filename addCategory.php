@@ -10,7 +10,7 @@ if ($isAdmin) {
 
         $addCategory = "INSERT INTO categories (name, description) VALUES ('$name', '$description')";
         $result = mysqli_query($con, $addCategory);
-        if ($result) {
+        if ($result) { 
             echo json_encode(
                 [
                     'success' => true,

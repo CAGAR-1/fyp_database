@@ -42,10 +42,13 @@
     // Creating MySQL Connection.
 
 
-    if (isset($_POST['email']) && isset($_POST['password'])) {
+    if (isset($_POST['username'])&& isset($_POST['contactno'])&& isset($_POST['email']) && isset($_POST['password']) && isset($_POST['address'])) {
 
         $email = $_POST['email'];
+        $username = $_POST['username'];
         $password = $_POST['password'];
+        $contactno = $_POST['contactno'];
+        $address = $_POST['address'];
 
         //check if the email is already in the database
         $check_email = "SELECT * FROM users WHERE email = '$email'";
@@ -59,7 +62,7 @@
                 ]
             );
         } else {
-            signUp($email, $password);
+            signUp($username,$contactno,$email, $password, $address);
         }
     } else 
         echo json_encode(
