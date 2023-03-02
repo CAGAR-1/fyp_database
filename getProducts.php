@@ -3,7 +3,8 @@
 include 'DatabaseConfig.php';
 include 'helper_functions/authentication_functions.php';
 //get categories from the database
- $categories = "SELECT products.id, products.image, products.description, products.price, categories.name as category FROM products join categories on products.category_id = categories.id";
+$id = '4';
+ $categories = "SELECT products.id, products.image, products.description, products.price, categories.name as category FROM products join categories on products.category_id = categories.id where products.category_id = ('$id')";
     $result = mysqli_query($con, $categories);
     if ($result) {
         $data = [];

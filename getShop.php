@@ -3,9 +3,7 @@
 include 'DatabaseConfig.php';
 include 'helper_functions/authentication_functions.php';
 //get categories from the database
- $categories = "SELECT shops.id, shops.image, shops.name, shops.location,shops.owner_name,shops.pan_no
- 
- categories.name as category FROM products join categories on products.category_id = categories.id";
+ $categories = "SELECT * FROM shops";
     $result = mysqli_query($con, $categories);
     if ($result) {
         $data = [];
@@ -16,14 +14,14 @@ include 'helper_functions/authentication_functions.php';
             [
                 'success' => true,
                 'data' => $data,
-                'message' => "Products fetched successfully"
+                'message' => "Mercahnts fetched successfully"
             ]
         );
     } else {
         echo json_encode(
             [
                 'success' => false,
-                'message' => 'Error fetching categories'
+                'message' => 'Error fetching Merchants'
             ]
         );
     }
