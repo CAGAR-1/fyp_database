@@ -57,8 +57,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
       $data=mysqli_fetch_assoc($result);
       $databasePassword= $data['password'];
       $userId= $data['id'];
-      $isAdmin=$data['isAdmin']=='1';
-      login($password, $databasePassword, $userId,$isAdmin);
+      $role=$data['role'];
+      login($password, $databasePassword, $userId,$role);
      
     } else {
         echo json_encode(

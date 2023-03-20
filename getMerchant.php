@@ -2,9 +2,8 @@
 
 include 'DatabaseConfig.php';
 include 'helper_functions/authentication_functions.php';
-//get categories from the database
-// $id = '4';
- $categories = "SELECT services.id, services.image, services.description, services.price, services.name as category FROM services join categories on services.category_id = categories.id";
+
+ $categories = "SELECT * FROM users where role='merchant'";
     $result = mysqli_query($con, $categories);
     if ($result) {
         $data = [];
@@ -15,14 +14,14 @@ include 'helper_functions/authentication_functions.php';
             [
                 'success' => true,
                 'data' => $data,
-                'message' => "Services fetched successfully"
+                'message' => "Mercahnts fetched successfully"
             ]
         );
     } else {
         echo json_encode(
             [
                 'success' => false,
-                'message' => 'Error fetching categories'
+                'message' => 'Error fetching Merchants'
             ]
         );
     }

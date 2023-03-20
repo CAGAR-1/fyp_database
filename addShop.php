@@ -9,11 +9,13 @@ if ($isAdmin) {
     && isset($_POST['location']) 
     && isset($_POST['owner_name']) 
     && isset($_POST['pan_no']) 
+    && isset($_POST['user_id']) 
     && isset($_FILES["image"])) {
         $name = $_POST['name'];
         $location = $_POST['location'];
         $owner_name= $_POST['owner_name'];
         $pan_no = $_POST['pan_no'];
+        $user_id = $_POST['user_id'];
          //getimage
         $image = $_FILES['image']['name'];
         $image_tmp = $_FILES['image']['tmp_name'];
@@ -28,7 +30,7 @@ if ($isAdmin) {
 
         
                   //inserting data into database
-                  $sql = "INSERT INTO shops (name, location, owner_name, pan_no, image) VALUES ('$name', '$location', '$owner_name', '$pan_no', '$image_path')";
+                  $sql = "INSERT INTO shops (name, location, owner_name, pan_no, image,user_id) VALUES ('$name', '$location', '$owner_name', '$pan_no', '$image_path', '$user_id')";
                   $query = mysqli_query($con, $sql);
                   if ($query) {
                     $data=['success'=>true, 'message'=>'Shop added Successfully'];

@@ -2,8 +2,7 @@
 include 'DatabaseConfig.php';
 include 'helper_functions/authentication_functions.php';
 
-$isAdmin = checkIfAdmin($_POST['token'] ?? null);
-if ($isAdmin) {
+
     if (isset($_POST['name']) && isset($_POST['description'])) {
         $name = $_POST['name'];
         $description = $_POST['description'];
@@ -33,11 +32,3 @@ if ($isAdmin) {
             ]
         );
     }
-} else {
-    echo json_encode(
-        [
-            'success' => false,
-            'message' => 'Access denied'
-        ]
-    );
-}

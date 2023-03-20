@@ -13,6 +13,7 @@ include 'helper_functions/authentication_functions.php';
                     'success' => true,
                     'message' => 'User found',
                     'data' => $data
+                    
                 ]
             );
     }else{
