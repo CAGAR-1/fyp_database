@@ -20,6 +20,7 @@ include 'helper_functions/authentication_functions.php';
         $category_id = $_POST['category_id'];
         $shop_id = $_POST['shop_id'];
          //getimage
+         
         $image = $_FILES['image']['name'];
         $image_tmp = $_FILES['image']['tmp_name'];
         $image_size = $_FILES['image']['size'];
