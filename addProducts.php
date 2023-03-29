@@ -3,9 +3,6 @@ include 'DatabaseConfig.php';
 include 'helper_functions/authentication_functions.php';
 
 
-// $isAdmin = checkIfAdmin($_POST['token'] ?? null);
-// if ($isAdmin) {
-
     
     if (isset($_POST['name']) 
     && isset($_POST['description']) 

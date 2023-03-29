@@ -2,10 +2,10 @@
  include 'DatabaseConfig.php';
  include 'helper_functions/authentication_functions.php';
 
-        if (isset($_POST['book_id']) && isset($_POST['available'])) {
+        if (isset($_POST['book_id']) && isset($_POST['status'])) {
             $book_id=$_POST['book_id'];
-            $available = $_POST['available'];
-            $insert_user = "UPDATE book SET available = '$available' WHERE id = $book_id";
+            $status = $_POST['status'];
+            $insert_user = "UPDATE book SET status = '$status' WHERE id = '$book_id'";
             $result = mysqli_query($con, $insert_user);
             if ($result) {
                 echo json_encode(
@@ -25,7 +25,7 @@
            
     
         }else{
-            $data=['success'=>false, 'message'=>'Product Id and product status is required.'];
+            $data=['success'=>false, 'message'=>'Book Id and product status is required.'];
             echo json_encode($data);
         }
     

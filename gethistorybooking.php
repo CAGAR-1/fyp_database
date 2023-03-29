@@ -3,19 +3,14 @@
 include 'DatabaseConfig.php';
 include 'helper_functions/authentication_functions.php';
 
-//get categories from the database
 
 
-// SELECT book.id,book.time,services.name FROM book join services on book.service_id
-
-
-$shopid=$_GET['shopid'];
- $categories = "SELECT s.name AS service_name, b.status,b.time,s.price,b.id,u.username,u.email,u.contactno
+$userid=$_GET['userid'];
+ $categories = "SELECT s.name AS service_name, sh.image AS shop_image, b.status,b.time,s.price,sh.name,sh.location,b.id
  FROM book AS b
  JOIN services AS s ON b.service_id = s.id
- JOIN users AS u on b.user_id=u.id
  JOIN shops AS sh ON b.shop_id = sh.id
- WHERE b.shop_id = $shopid;
+ WHERE b.user_id = $userid && b.status='complete';
  ";
     $result = mysqli_query($con, $categories);
     if ($result) {
