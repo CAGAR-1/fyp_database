@@ -3,15 +3,12 @@ include 'DatabaseConfig.php';
 include 'helper_functions/authentication_functions.php';
 
 
-
-
     if (isset($_POST['name']) 
     && isset($_POST['description']) 
     && isset($_POST['price']) 
     && isset($_POST["seat"])
     && isset($_POST["id"])
-   
-    
+
     ) {
         $name = $_POST['name'];
         $description = $_POST['description'];
