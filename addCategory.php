@@ -2,7 +2,6 @@
 include 'DatabaseConfig.php';
 include 'helper_functions/authentication_functions.php';
 
-
     
     if (isset($_POST['name']) 
     && isset($_POST['description']) 
