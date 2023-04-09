@@ -10,12 +10,13 @@ include 'helper_functions/authentication_functions.php';
 
 
 $shopId=$_GET['shopId'];
- $categories = "SELECT book.id, book.time,book.service_id, services.name,services.seat, COUNT(*) AS count
- FROM book
- JOIN services ON book.service_id = services.id
- WHERE book.shop_id = $shopId
- GROUP BY book.time
- HAVING COUNT(*) > services.seat;";
+ $categories = "SELECT book.id, book.time, book.service_id, services.name, services.seat, COUNT(*) AS count 
+ FROM book 
+ JOIN services ON book.service_id = services.id 
+ WHERE book.service_id = $shopId AND book.status = 'active' 
+ GROUP BY book.time 
+ HAVING COUNT(*) >= services.seat;
+ ";
     $result = mysqli_query($con, $categories);
     if ($result) {
         $data = [];
