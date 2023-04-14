@@ -26,6 +26,7 @@ include 'helper_functions/authentication_functions.php';
                     echo json_encode($data);
                     //  getProducts("Product added successfully.");
                   }
+                  
               } 
 
 
