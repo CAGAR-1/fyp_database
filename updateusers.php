@@ -7,7 +7,7 @@ include 'helper_functions/authentication_functions.php';
     && isset($_POST['contactno']) 
     && isset($_POST['username']) 
     && isset($_POST["address"])
-    && isset($_POST["role"])
+   
     && isset($_POST["id"])
 
 
@@ -17,16 +17,16 @@ include 'helper_functions/authentication_functions.php';
         $username= $_POST['username'];
       
         $address = $_POST['address'];
-        $role = $_POST['role'];
+        
         $id = $_POST['id'];
         
 
      
                   //inserting data into database
-                  $sql = "UPDATE users SET email='$email', contactno='$contactno', username='$username', address='$address',role='$role' WHERE id=$id";
+                  $sql = "UPDATE users SET email='$email', contactno='$contactno', username='$username', address='$address'WHERE id=$id";
                   $query = mysqli_query($con, $sql);
                   if ($query) {
-                    $data=['success'=>true, 'message'=>'Service Update successfully'];
+                    $data=['success'=>true, 'message'=>'User Update successfully'];
                     echo json_encode($data);
                     //  getProducts("Product added successfully.");
                   }
