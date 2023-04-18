@@ -52,7 +52,7 @@ else {
     $mail->Port = 587;                    // TCP port to connect to 
 
     // Sender info 
-    $mail->setFrom('someone24422@gmail.com', 'YourName');
+    $mail->setFrom('someone24422@gmail.com', 'Go-Fresh UP');
     $mail->addReplyTo($email, 'App User');
 
     // Add a recipient 
@@ -73,7 +73,7 @@ else {
     $bodyContent .= "This is the verification code for resetting your password.";
      
     $bodyContent .= "<h1><strong>" . $token . "</strong></h1>";
-    $bodyContent .= "Enter this otp in the app for the email verification.";
+    $bodyContent .= "Enter this otp in the app for resetting your Password.";
 
     $mail->Body    = $bodyContent;
     if (!$mail->send()) {

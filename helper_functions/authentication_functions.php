@@ -10,7 +10,7 @@ function signUp($username,$contactno,$email, $password, $address)
         echo json_encode(
             [
                 'success' => true,
-                'message' => 'User created successfully'
+                'message' => 'User Register successfully'
             ]
         );
     } else {
@@ -37,7 +37,7 @@ function login($password, $databasePassword, $userID, $role)
             echo json_encode(
                 [
                     'success' => true,
-                    'message' => 'User logged in successfully',
+                    'message' => 'logged in successfully',
                     'token' => $token,
                     'role'=>$role
                 ]
@@ -75,7 +75,7 @@ function addMerchant($username,$contactno,$email, $password, $address)
         echo json_encode(
             [
                 'success' => true,
-                'message' => 'Merchant created successfully'
+                'message' => 'Vendors created successfully'
             ]
         );
     } else {

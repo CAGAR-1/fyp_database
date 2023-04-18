@@ -1,10 +1,10 @@
 <?php
-function signUp($email, $password)
+function signUp($username,$contactno,$email, $password, $address)
 {
     //insert the user into the database
     global $con;
     $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
-    $insert_user = "INSERT INTO users (email, password) VALUES ('$email', '$encrypted_password')";
+    $insert_user = "INSERT INTO users (email, password,username,contactno,address) VALUES ('$email', '$encrypted_password',$username,$contactno,$address)";
     $result = mysqli_query($con, $insert_user);
     if ($result) {
         echo json_encode(
