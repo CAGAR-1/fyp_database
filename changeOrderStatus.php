@@ -11,14 +11,14 @@ include 'helper_functions/authentication_functions.php';
                 echo json_encode(
                     [
                         'success' => true,
-                        'message' => "Order updated successfully"
+                        'message' => " updated successfully"
                     ]
                 );
             } else {
                 echo json_encode(
                     [
                         'success' => false,
-                        'message' => 'Error updating order'
+                        'message' => 'Error updating '
                     ]
                 );
             }

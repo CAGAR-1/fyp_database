@@ -11,21 +11,21 @@
                 echo json_encode(
                     [
                         'success' => true,
-                        'message' => 'Updated the status of product.'
+                        'message' => 'Update status of Service.'
                     ]
                 );
             } else {
                 echo json_encode(
                     [
                         'success' => false,
-                        'message' => 'Failed to update the status of the product.'
+                        'message' => 'Failed to update the status of the service.'
                     ]
                 );
             }
            
     
         }else{
-            $data=['success'=>false, 'message'=>'Book Id and product status is required.'];
+            $data=['success'=>false, 'message'=>'Book Id and service status is required.'];
             echo json_encode($data);
         }
     

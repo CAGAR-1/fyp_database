@@ -3,7 +3,6 @@
 include 'DatabaseConfig.php';
 include 'helper_functions/authentication_functions.php';
 
-
 $shopId=$_GET['shopId'];
  $categories = "SELECT SUM(services.price) AS total_price
  FROM services

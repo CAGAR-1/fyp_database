@@ -3,7 +3,7 @@
  $HostName = "localhost";
  
  //Define your MySQL Database Name here.
- $DatabaseName = "sagar_database";
+ $DatabaseName = "go_freshup";
  
  //Define your Database User Name here.
  $HostUser = "root";
